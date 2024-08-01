@@ -78,6 +78,7 @@ justify-content: space-evenly;
 }
 .card {
   width: 30rem;
+  height: 30rem;
   background-color:#a79a2d;
   padding: 4rem;
   display: flex;
@@ -85,21 +86,52 @@ justify-content: space-evenly;
   justify-content: space-between;
   align-items: center;
   box-shadow: 1rem 1rem 1rem #000;
-
+  position: relative;
+  transform: rotateY(20deg) skewX(-2deg);
+  transition: transform 0.5s, box-shadow 0.5s
 }
-.card-img {
-  width: 60%;
-  height: 60%;
+.card:hover{
+  transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
+  box-shadow: 2rem 2rem 2rem #000;
+}
+.card::before {
+  content: "";
+  width: 1rem;
+  height: 100%;
+  background-color: #817824;
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  transform: skewY(45deg);
+  transform-origin: right;
+  box-shadow: -0.1rem -0.1rem 0.1rem #000;
+}
+.card::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  background-color: #8f8317;
+  position: absolute;
+  top: -1rem;
+  left:0;
+  transform: skewX(45deg);
+  transform-origin: bottom;
+  box-shadow: -0.1rem -0.1rem 0.1rem #000;
+}
 
-  
+
+.card-img {
+  width:50%;
+  height:15rem;
+
 }
 .card-name {
-  font-size: 100rem;
-  font-weight: 1000;
+  font-size: 3rem;
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.8rem;
+  letter-spacing: 0.5rem;
   color: #111;
-  margin: 2rem 0;
+  margin: 1rem 0;
   text-shadow: 0.15rem 0.15rem0.15rem #000;
 }
 .card-btn {
@@ -112,6 +144,10 @@ justify-content: space-evenly;
   letter-spacing: 0.2rem;
   text-transform: capitalize;
   border: none;
+  padding: 0.5rem o;
+  cursor: pointer;
+  box-shadow: -0.2rem -0.2rem --0.2rem #000;
+
 }
 
 
